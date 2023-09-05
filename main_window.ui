@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1116</width>
+    <height>776</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1111</width>
+      <height>731</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="dashboard_tab">
+     <attribute name="title">
+      <string>Dashboard</string>
+     </attribute>
+     <widget class="QPushButton" name="new_book_button">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>131</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Cascadia Code</family>
+        <pointsize>9</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Add New Book</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>60</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Cascadia Code</family>
+        <pointsize>11</pointsize>
+        <italic>false</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>Issued Books</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>390</y>
+        <width>161</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Cascadia Code</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Unissued Books</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>60</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Cascadia Code</family>
+        <pointsize>9</pointsize>
+        <italic>false</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>DELETE</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>380</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>DELETE</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>990</x>
+        <y>60</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>REFRESH</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>380</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Cascadia Code</family>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>EDIT</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_6">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>60</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>EDIT</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_7">
+      <property name="geometry">
+       <rect>
+        <x>990</x>
+        <y>380</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>REFRESH</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="issued_books_table">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>100</y>
+        <width>1071</width>
+        <height>251</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="columnCount">
+       <number>8</number>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>133</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Description</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Page_Count</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Issued</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Author</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>ISBN</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Year</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTableWidget" name="unissued_books_table">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>420</y>
+        <width>1071</width>
+        <height>251</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="columnCount">
+       <number>8</number>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>133</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Description</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Page_Count</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Issued</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Author</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>ISBN</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Year</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="find_books_tab">
+     <attribute name="title">
+      <string>Find</string>
+     </attribute>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Search Books</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>10</y>
+        <width>93</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Search</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>11</y>
+        <width>581</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="search_table">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>1071</width>
+        <height>621</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="columnCount">
+       <number>8</number>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>133</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Description</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Page_Count</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Issued</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Author</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>ISBN</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Year</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="all_books_tab">
+     <attribute name="title">
+      <string>All books</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_8">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>REFRESH</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="allbooks_table">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>1071</width>
+        <height>621</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="columnCount">
+       <number>8</number>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>133</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Description</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Page_Count</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Issued</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Author</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>ISBN</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Year</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1116</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
