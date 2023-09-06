@@ -1,0 +1,52 @@
+[
+    {
+        "id": "33",
+        "name": "Atomic Habits",
+        "description": "hdksj",
+        "isbn": "45",
+        "page_count": 562,
+        "issued": false,
+        "author": "nbkj",
+        "year": 45
+    },
+    {
+        "id": "9",
+        "name": "ajdca",
+        "description": "vnalk",
+        "isbn": "5263",
+        "page_count": 12,
+        "issued": false,
+        "author": "svsv",
+        "year": 86
+    },
+    {
+        "id": 78,
+        "name": "flsfl",
+        "description": "akdl",
+        "isbn": "24",
+        "page_count": 99,
+        "issued": true,
+        "author": "mflamf",
+        "year": 24
+    },
+    {
+        "id": 79,
+        "name": "akmfka",
+        "description": "safk;w",
+        "isbn": "qrk;q",
+        "page_count": 47,
+        "issued": false,
+        "author": "adkpq",
+        "year": 78
+    },
+    {
+        "id": 8768,
+        "name": "zjhkczd",
+        "description": "jzhck",
+        "isbn": "768",
+        "page_count": 798,
+        "issued": true,
+        "author": "kclm",
+        "year": 789
+    }
+]

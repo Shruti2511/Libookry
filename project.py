@@ -10,7 +10,14 @@ from add_dialog import Ui_Dialog as Ui_add_dialog
 #import my functions
 import my_functions as lib
 
-# main window
+class EditDialog(QDialog):
+    def __init__(self, parent=None):
+        super(EditDialog, self).__init__(parent)
+        self.ui = Ui_edit_dialog()
+        self.ui.setupUi(self)
+        self.ui.buttonBox.accepted.connect(self.accept)
+        self.ui.buttonBox.rejected.connect(self.reject)
+
 class AddDialog(QDialog):
     def __init__(self, parent=None):
         super(AddDialog, self).__init__(parent)
@@ -19,11 +26,36 @@ class AddDialog(QDialog):
         self.ui.buttonBox.accepted.connect(self.accept)
         self.ui.buttonBox.rejected.connect(self.reject)
 
+# main window
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
         self.setupUi(self)
         self.new_book_button.pressed.connect(self.show_add_dialog)
+        self.load_issued_table()
+        self.load_unissued_table()
+        self.load_allbooks_table()
+        self.pushButton_6.clicked.connect(lambda: self.edit_book(self.issued_books_table))
+
+    
+    def edit_book(self, table):
+        selected_row = table.currentRow()
+        if selected_row != -1:
+            book_id = int(table.item(selected_row, 0).text())
+            book = lib.find_book(book_id)
+            # creating edit dialog
+            dialog = EditDialog()
+            dialog.ui.id_input.setValue(int(book.id))
+            dialog.ui.name_input.setText(book.name)
+            dialog.ui.description_input.setText(book.description)
+            dialog.ui.isbn_input.setText(book.isbn)
+            dialog.ui.page_count_input.setValue(int(book.page_count))
+            dialog.ui.yes_button.setChecked(book.issued)
+            if book.issued == False:
+                dialog.ui.no_button.setChecked(True)
+            dialog.ui.author_input.setText(book.author)
+            dialog.ui.year_input.setValue(int(book.year))
+            dialog.exec()
 
     def save_new_book(self, ui):
         #dictionary to store information
@@ -33,10 +65,41 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             'description': ui.description_input.text(),
             'isbn': ui.isbn_input.text(),
             'page_count': int(ui.page_count_input.text()),
-            'issued': ui.yes.isChecked(),
+            'issued': ui.yes_button.isChecked(),
             'author': ui.author_input.text(),
             'year': int(ui.year_input.text())
         }
+        for attr in new_book:
+            if new_book[attr] == None or str(new_book[attr]) == "":
+                return False
+        lib.add_book(new_book)
+    
+    def load_issued_table(self):
+        books = lib.get_issued_books()
+        self.issued_books_table.setRowCount(len(books))
+        for index, book in enumerate(books):
+            book = book.to_dict()
+            for book_index, attr in enumerate(book):
+                self.issued_books_table.setItem(index, book_index, QTableWidgetItem(str(book[str(attr)])))
+                self.issued_books_table.item(index, book_index).setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)
+
+    def load_unissued_table(self):
+        books = lib.get_unissued_books()
+        self.unissued_books_table.setRowCount(len(books))
+        for index, book in enumerate(books):
+            book = book.to_dict()
+            for book_index, attr in enumerate(book):
+                self.unissued_books_table.setItem(index, book_index, QTableWidgetItem(str(book[str(attr)])))
+                self.unissued_books_table.item(index, book_index).setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)
+
+    def load_allbooks_table(self):
+        books = lib.load_books()
+        self.allbooks_table.setRowCount(len(books))
+        for index, book in enumerate(books):
+            book = book.to_dict()
+            for book_index, attr in enumerate(book):
+                self.allbooks_table.setItem(index, book_index, QTableWidgetItem(str(book[str(attr)])))
+                self.allbooks_table.item(index, book_index).setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)
     
     def show_add_dialog(self):
         input_dlg = AddDialog()

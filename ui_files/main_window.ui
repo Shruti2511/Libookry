@@ -39,8 +39,8 @@
      <widget class="QPushButton" name="new_book_button">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>10</y>
+        <x>20</x>
+        <y>20</y>
         <width>131</width>
         <height>28</height>
        </rect>
@@ -224,6 +224,11 @@
       </column>
       <column>
        <property name="text">
+        <string>ISBN</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
         <string>Page_Count</string>
        </property>
       </column>
@@ -235,11 +240,6 @@
       <column>
        <property name="text">
         <string>Author</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>ISBN</string>
        </property>
       </column>
       <column>
@@ -285,6 +285,11 @@
       </column>
       <column>
        <property name="text">
+        <string>ISBN</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
         <string>Page_Count</string>
        </property>
       </column>
@@ -296,11 +301,6 @@
       <column>
        <property name="text">
         <string>Author</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>ISBN</string>
        </property>
       </column>
       <column>
