@@ -25,6 +25,15 @@ def save_books(books):
     with open("books.dat", "w") as file:
         file.write(json.dumps(json_books, indent=4))
 
+# update book
+def update_book(book):
+    book = Book(book['id'], book['name'], book['description'], book['isbn'], book['page_count'], book['issued'], book['author'], book['year'])
+    books = load_books()
+    if book!= None:
+        books = list(filter(lambda bk: int(bk.id)!= int(book.id), books))
+        books.append(book)
+        save_books(books)
+
 # add book function
 def add_book(book):
     books = load_books()
@@ -56,3 +65,8 @@ def find_book(book_id):
         if int(book.id) == int(book_id):
             return book
     return None
+
+def delete_book(id):
+    books = load_books()
+    books = list(filter(lambda bk: int(bk.id) != int(id), books))
+    save_books(books)

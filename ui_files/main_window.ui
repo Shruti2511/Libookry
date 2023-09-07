@@ -96,7 +96,7 @@
        <string>Unissued Books</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="delete_button">
       <property name="geometry">
        <rect>
         <x>790</x>
@@ -116,7 +116,7 @@
        <string>DELETE</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="delete_button2">
       <property name="geometry">
        <rect>
         <x>790</x>
@@ -129,7 +129,7 @@
        <string>DELETE</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="refresh_button">
       <property name="geometry">
        <rect>
         <x>990</x>
@@ -142,7 +142,7 @@
        <string>REFRESH</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="edit_button2">
       <property name="geometry">
        <rect>
         <x>890</x>
@@ -161,7 +161,7 @@
        <string>EDIT</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_6">
+     <widget class="QPushButton" name="edit_button">
       <property name="geometry">
        <rect>
         <x>890</x>
@@ -174,7 +174,7 @@
        <string>EDIT</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_7">
+     <widget class="QPushButton" name="refresh_button2">
       <property name="geometry">
        <rect>
         <x>990</x>
@@ -319,18 +319,18 @@
        <rect>
         <x>20</x>
         <y>20</y>
-        <width>111</width>
+        <width>171</width>
         <height>21</height>
        </rect>
       </property>
       <property name="text">
-       <string>Search Books</string>
+       <string>Search Books by ID</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="search_button">
       <property name="geometry">
        <rect>
-        <x>730</x>
+        <x>790</x>
         <y>10</y>
         <width>93</width>
         <height>31</height>
@@ -340,11 +340,11 @@
        <string>Search</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="search_bar">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>11</y>
+        <x>200</x>
+        <y>10</y>
         <width>581</width>
         <height>31</height>
        </rect>
@@ -416,7 +416,7 @@
      <attribute name="title">
       <string>All books</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton_8">
+     <widget class="QPushButton" name="refresh_button3">
       <property name="geometry">
        <rect>
         <x>20</x>
