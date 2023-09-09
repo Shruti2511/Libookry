@@ -126,7 +126,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.search_table.setItem(0, book_index, QTableWidgetItem(str(book_dict[str(attr)])))
                 self.search_table.item(0, book_index).setFlags(Qt.ItemIsSelectable | Qt.ItemIsEnabled)
 
-
     def delete_book(self, table):
         selected_row = table.currentRow()
         if selected_row != -1:
